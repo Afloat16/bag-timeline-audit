@@ -90,3 +90,11 @@ class TimelineTests(unittest.TestCase):
         report = audit(rows, pair=['/x', '/missing'], same_clock=True)
         self.assertTrue(report['findings_truncated'])
         self.assertEqual(report['error_count'], 1)
+
+    def test_stdout_json_is_safe_for_non_utf8_console(self):
+        from bag_timeline_audit.common import emit
+        stream=io.StringIO()
+        with contextlib.redirect_stdout(stream):
+            emit({'topic':'/机器人'})
+        self.assertTrue(stream.getvalue().isascii())
+        self.assertEqual(json.loads(stream.getvalue())['topic'],'/机器人')

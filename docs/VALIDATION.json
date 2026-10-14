@@ -5,7 +5,7 @@
     "python": "3.12.14"
   },
   "unit_tests": {
-    "passed": 11,
+    "passed": 12,
     "failed": 0,
     "skipped": 0
   },
