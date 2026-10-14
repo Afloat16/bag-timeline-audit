@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bag-timeline-audit"
+version = "0.1.0"
+description = "Read-only ROS 2 SQLite and MCAP timestamp diagnostics: gaps, regressions, duplicates and cross-topic alignment."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "Afloat16"}]
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/Afloat16/bag-timeline-audit"
+Issues = "https://github.com/Afloat16/bag-timeline-audit/issues"
+
+[project.optional-dependencies]
+dev = ["build>=1.2"]
+mcap = ["mcap>=1.2,<2"]
+
+[project.scripts]
+bag-timeline-audit = "bag_timeline_audit.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

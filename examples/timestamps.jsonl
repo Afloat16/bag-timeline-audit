@@ -1,0 +1,4 @@
+{"topic":"/left","record_ns":1000000000,"header_ns":1000000000}
+{"topic":"/right","record_ns":1002000000,"header_ns":1000000000}
+{"topic":"/left","record_ns":1050000000,"header_ns":1050000000}
+{"topic":"/right","record_ns":1052000000,"header_ns":1050000000}
